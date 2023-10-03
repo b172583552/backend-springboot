@@ -103,7 +103,7 @@
                     <version>1.11.2</version>
                     <configuration>
                         <nodeVersion>v18.16.1</nodeVersion>
-                        <workingDirectory>C:\Users\tom\Documents\frontend\frontend</workingDirectory>
+                        <workingDirectory>${basedir}\frontend</workingDirectory>
                         <!-- optional: with node version greater than 4.0.0 will use npm provided by node distribution -->
 
 
@@ -154,7 +154,7 @@
                                 <configuration>
                                     <resources>
                                         <resource>
-                                            <directory>C:\Users\tom\Documents\frontend\frontend\build</directory>
+                                            <directory>${basedir}\frontend\build</directory>
                                         </resource>
                                     </resources>
                                     <outputDirectory>${basedir}\target\classes\static</outputDirectory>

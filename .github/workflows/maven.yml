@@ -27,7 +27,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Change permission
+      run: chmod +x mvnw
     - name: Build with Maven
-      run: mvnw clean package -P build-frontend 
+      run: ./mvnw clean package -P build-frontend 
 
   

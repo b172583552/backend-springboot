@@ -125,7 +125,7 @@
                                 <goals>
                                     <goal>dockerBuild</goal>
                                 </goals>
-                            </execution>=
+                            </execution>
 
                         </executions>
                     </plugin>

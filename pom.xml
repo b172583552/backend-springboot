@@ -123,21 +123,10 @@
                                     </to>
                                 </configuration>
                                 <goals>
-                                    <goal>dockerBuild</goal>
+                                    <goal>Build</goal>
                                 </goals>
                             </execution>
-                            <execution>
-                                <id>push-custom-tag</id>
-                                <phase>package</phase>
-                                <configuration>
-                                    <to>
-                                        <image>docker.io/b172583552/${app.image.name}:${app.image.tag}</image>
-                                    </to>
-                                </configuration>
-                                <goals>
-                                    <goal>dockerBuild</goal>
-                                </goals>
-                            </execution>
+
 
                         </executions>
                     </plugin>
@@ -159,7 +148,7 @@
                     <version>1.11.2</version>
                     <configuration>
                         <nodeVersion>v18.16.1</nodeVersion>
-                        <workingDirectory>${basedir}\frontend</workingDirectory>
+                        <workingDirectory>${basedir}/frontend</workingDirectory>
                         <!-- optional: with node version greater than 4.0.0 will use npm provided by node distribution -->
 
 
@@ -210,10 +199,10 @@
                                 <configuration>
                                     <resources>
                                         <resource>
-                                            <directory>${basedir}\frontend\build</directory>
+                                            <directory>${basedir}/frontend/build</directory>
                                         </resource>
                                     </resources>
-                                    <outputDirectory>${basedir}\target\classes\static</outputDirectory>
+                                    <outputDirectory>${basedir}/target/classes/static</outputDirectory>
                                 </configuration>
                             </execution>
                         </executions>

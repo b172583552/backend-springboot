@@ -46,6 +46,18 @@ jobs:
         password: ${{secrets.DOCKER_HUB_PASSWORD}}
     - name: Build with Maven
       run: ./mvnw clean package -P build-frontend -P jib-push-to-dockerhub -Dapp.image.tag=latest -DskipTests 
+    - name: Beanstalk deploy
+      uses: einaregilsson/beanstalk-deploy@v21
+      with:
+        aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        region: $ {{env.AWS_REGION}}
+        environment_name: ${{env.EB_ENVIRONMENT_NAME}}
+        application_name: ${{env.EB_APPLICATION_NAME}}
+        deployment_package: ${{env.EB_DEPLOYMENT_PACKAGE}}
+        version_label: ${{steps.build-number-.outputs.BUILD_NUMBER }}
+        version_description: new deploy
+        
   
         
 

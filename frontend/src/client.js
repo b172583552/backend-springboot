@@ -1,5 +1,5 @@
 import fetch from "unfetch";
-
+import config from "./config.json"
 const checkStatus = response => {
     if (response.ok) {
         console.log(response => response.json());
@@ -11,11 +11,11 @@ const checkStatus = response => {
     return Promise.reject(error);
 }
 export const getAllStudents = () =>
-    fetch("http://studentportal.ap-east-1.elasticbeanstalk.com/students")
+    fetch(config.SERVER_URL)
         .then(checkStatus);
 
 export const addNewStudent = (student) => {
-    return fetch("http://studentportal.ap-east-1.elasticbeanstalk.com/students", {
+    return fetch(config.SERVER_URL, {
         headers:{
             "Content-Type": "application/json"
         },
@@ -27,7 +27,7 @@ export const addNewStudent = (student) => {
 export const deleteStudent = studentId =>
 {
     console.log(studentId)
-    return fetch(`http://studentportal.ap-east-1.elasticbeanstalk.com/students/${studentId}`,
+    return fetch(`${config.SERVER_URL}/${studentId}`,
         {method: 'DELETE'
         }).then(checkStatus)
 }

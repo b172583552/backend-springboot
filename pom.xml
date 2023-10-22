@@ -123,7 +123,7 @@
                                     </to>
                                 </configuration>
                                 <goals>
-                                    <goal>dockerBuild</goal>
+                                    <goal>build</goal>
                                 </goals>
                             </execution>
 

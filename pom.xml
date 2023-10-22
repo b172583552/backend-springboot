@@ -72,7 +72,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>3.4.0</version>
                 <configuration>
                     <from>
                         <image>openjdk:17</image>
@@ -100,7 +100,7 @@
                     <plugin>
                         <groupId>com.google.cloud.tools</groupId>
                         <artifactId>jib-maven-plugin</artifactId>
-                        <version>3.2.1</version>
+                        <version>3.4.0</version>
                         <configuration>
                             <from>
                                 <image>openjdk:17</image>
@@ -119,25 +119,13 @@
                                 <phase>package</phase>
                                 <configuration>
                                     <to>
-                                        <image>docker.io/b172583552/${app.image.name}:latest</image>
+                                        <image>docker.io/b172583552/${app.image.name}:1</image>
                                     </to>
                                 </configuration>
                                 <goals>
                                     <goal>dockerBuild</goal>
                                 </goals>
-                            </execution>
-                            <execution>
-                                <id>push-custom-tag</id>
-                                <phase>package</phase>
-                                <configuration>
-                                    <to>
-                                        <image>docker.io/b172583552/${app.image.name}:${app.image.tag}</image>
-                                    </to>
-                                </configuration>
-                                <goals>
-                                    <goal>dockerBuild</goal>
-                                </goals>
-                            </execution>
+                            </execution>=
 
                         </executions>
                     </plugin>

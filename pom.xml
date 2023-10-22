@@ -119,7 +119,7 @@
                                 <phase>package</phase>
                                 <configuration>
                                     <to>
-                                        <image>docker.io/b172583552/${app.image.name}:1</image>
+                                        <image>docker.io/b172583552/${app.image.name}:latest</image>
                                     </to>
                                 </configuration>
                                 <goals>
